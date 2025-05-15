@@ -81,7 +81,5 @@ for i in range(len(data_filenames)):
             
     plt.savefig(f"images/{data_filename.split('_')[0]}.png")
     ani = animation.FuncAnimation(fig=fig, func=lambda f: update(f, path_x, path_y, p), frames=len(path_x), interval=100)
-    plt.xlabel('X-axis')
-    plt.ylabel('Y-axis')
     ani.save(filename=f"videos/{data_filename.split('_')[0]}.mp4", writer="ffmpeg")
     plt.close(fig)
