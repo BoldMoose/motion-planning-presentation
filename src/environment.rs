@@ -125,15 +125,6 @@ const FOREST_OBSTACLES: [[f64; 2]; 10] = [
     [8.0, 8.0],
 ];
 
-pub enum AvailableEnvs {
-    SimpleGeoEnv(SimpleGeoEnv),
-    SimpleKinEnv(SimpleVelEnv),
-    SimpleDynEnv(SimpleAccEnv),
-    ForestGeoEnv(ForestGeoEnv),
-    ForestKinEnv(ForestVelEnv),
-    ForestDynEnv(ForestAccEnv),
-}
-
 #[derive(Clone)]
 pub struct SimpleGeoEnv {
     initial_state: GeoState,
