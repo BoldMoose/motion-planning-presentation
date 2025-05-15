@@ -1,0 +1,31 @@
+@startuml overview
+
+' Traits
+interface Environment<S: StateSpace, U: ControlSpace> {
+    +initial_state(&self): S
+    +is_valid(&self, &S): bool
+    +is_goal(&self, &S): bool
+    +sample_state(&self): S
+    +sample_goal(&self): S
+}
+
+' Environments
+struct SimpleGeoEnv 
+SimpleGeoEnv ..|> Environment
+
+struct SimpleVelEnv
+SimpleVelEnv ..|> Environment
+
+struct SimpleAccEnv
+SimpleAccEnv ..|> Environment
+
+struct ForestGeoEnv
+ForestGeoEnv ..|> Environment
+
+struct ForestVelEnv
+ForestVelEnv ..|> Environment
+
+struct ForestAccEnv
+ForestAccEnv ..|> Environment
+
+@enduml

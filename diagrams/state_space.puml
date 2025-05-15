@@ -1,0 +1,36 @@
+@startuml overview
+
+' Traits
+interface StateSpace {
+    +min(): Self
+    +max(): Self
+    +sample(): Self
+    +clamp(&mut self): Self
+    +contains(&Self): bool
+    +distance_heuristic(&Self, &Self): f64
+    +span(): Self
+}
+
+' States
+struct GeoState {
+    +x: f64
+    +y: f64
+}
+GeoState ..|> StateSpace
+
+struct VelState {
+    +x: f64
+    +y: f64
+    +theta: f64
+}
+VelState ..|> StateSpace
+
+struct AccState {
+    +x: f64
+    +y: f64
+    +v: f64
+    +theta: f64
+}
+AccState ..|> StateSpace
+
+@enduml

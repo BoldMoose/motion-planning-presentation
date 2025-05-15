@@ -1,0 +1,21 @@
+@startuml overview
+
+' Traits
+interface Planner{
+    +solve(&mut self, Duration): PlannerSolution
+}
+
+' Planner
+struct RRT<E, S, U> {
+    -nodes: Vec<(S, Option<usize>)>
+    -step_size: f64
+    -max_dist: f64
+    -bias: f64
+    -environment: E
+    +new(environment: E, step_size: f64, max_dist: f64, bias: f64): Self
+    +solve(&mut self, Duration): PlannerSolution
+}
+RRT ..|> Planner
+RRT ..|> RRT
+
+@enduml

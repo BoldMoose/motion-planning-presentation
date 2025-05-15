@@ -1,0 +1,30 @@
+@startuml overview
+
+' Traits
+interface ControlSpace {
+    +min(): Self
+    +max(): Self
+    +sample(): Self
+    +clamp(&mut self): Self
+    +from_states<T: StateSpace>(&self, &T, &T): Self
+}
+
+' Controls
+struct GeoControl {
+    +theta: f64
+}
+GeoControl ..|> ControlSpace
+
+struct VelControl {
+    +v: f64
+    +omega: f64
+}
+VelControl ..|> ControlSpace
+
+struct AccControl {
+    +a: f64
+    +omega: f64
+}
+AccControl ..|> ControlSpace
+
+@enduml
