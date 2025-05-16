@@ -3,7 +3,7 @@ This repository is a snapshot of an implementation of Rapidly Exploring Random T
 
 ## Build and Run
 ```
-cargo run && python plot.py
+mkdir results && cargo run && python plot.py
 ```
 
 ## Resources
