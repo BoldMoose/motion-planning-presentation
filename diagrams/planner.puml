@@ -7,7 +7,7 @@ interface Planner{
 
 ' Planner
 struct RRT<E, S, U> {
-    -nodes: Vec<(S, Option<usize>)>
+    -nodes: Vec<usize, S>
     -step_size: f64
     -max_dist: f64
     -bias: f64
